@@ -148,7 +148,7 @@ export default async function ProductPage({ params }: Props) {
       {related.length > 0 && (
         <section className="container-x py-16">
           <SectionHeading eyebrow="También te puede gustar" title="Más detalles" accent="para enamorar" />
-          <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 xl:gap-x-6">
+          <div className="mt-10 grid grid-cols-1 gap-x-4 gap-y-10 min-[360px]:grid-cols-2 md:grid-cols-4 xl:gap-x-6">
             {related.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} />
             ))}

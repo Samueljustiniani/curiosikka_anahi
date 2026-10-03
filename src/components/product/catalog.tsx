@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
-import { Search, SlidersHorizontal, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import type { Category, Product } from "@/lib/types";
 import { OCCASIONS, getOccasion } from "@/lib/occasions";
 import { cn } from "@/lib/utils";
@@ -85,8 +85,8 @@ export function Catalog({ products, categories }: { products: Product[]; categor
               aria-label="Buscar productos"
             />
           </label>
-          <div className="flex min-w-0 items-center gap-2">
-            <SlidersHorizontal className="hidden size-4 text-ink-3 sm:block" />
+          <div className="grid min-w-0 grid-cols-[1fr_1fr] items-center gap-2 sm:flex">
+            
             {usedOccasions.length > 0 && (
               <select
                 value={occasion}
@@ -94,7 +94,7 @@ export function Catalog({ products, categories }: { products: Product[]; categor
                 className="field w-auto min-w-0 flex-1 cursor-pointer rounded-full py-2.5 sm:flex-none"
                 aria-label="Filtrar por ocasión"
               >
-                <option value="">Todas las ocasiones</option>
+                <option value="">Ocasión</option>
                 {usedOccasions.map((o) => (
                   <option key={o.slug} value={o.slug}>
                     {o.name}
@@ -163,7 +163,7 @@ export function Catalog({ products, categories }: { products: Product[]; categor
 
       <AnimatePresence mode="popLayout">
         {filtered.length > 0 ? (
-          <motion.div layout className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 xl:grid-cols-4 xl:gap-x-6">
+          <motion.div layout className="grid grid-cols-1 gap-x-4 gap-y-10 min-[360px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-x-6">
             {filtered.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} priority={i < 4} />
             ))}

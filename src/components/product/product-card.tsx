@@ -121,7 +121,7 @@ export function ProductCard({ product, index = 0, priority = false }: { product:
             <button
               type="button"
               onClick={quickAdd}
-              className="absolute bottom-3 right-3 inline-flex h-11 items-center gap-1.5 rounded-full bg-ink pl-3 pr-4 text-sm font-semibold text-cream shadow-lift transition-all duration-500 hover:bg-pink sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100"
+              className="absolute bottom-2.5 right-2.5 inline-flex h-10 items-center gap-1.5 rounded-full bg-ink px-3 sm:bottom-3 sm:right-3 sm:h-11 sm:pl-3 sm:pr-4 text-sm font-semibold text-cream shadow-lift transition-all duration-500 hover:bg-pink sm:translate-y-3 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100"
               aria-label={`Agregar ${product.name} a mi lista`}
             >
               <Plus className="size-4" /> <span className="hidden sm:inline">Agregar</span>
@@ -130,7 +130,7 @@ export function ProductCard({ product, index = 0, priority = false }: { product:
         </div>
 
         <div className="px-2 pt-4">
-          <div className="flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink-3">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[0.66rem] font-semibold uppercase leading-snug tracking-[0.1em] text-ink-3 sm:text-[0.7rem] sm:tracking-[0.16em]">
             {product.category?.name && <span>{product.category.name}</span>}
             {occasion && (
               <>
@@ -139,7 +139,7 @@ export function ProductCard({ product, index = 0, priority = false }: { product:
               </>
             )}
           </div>
-          <h3 className="mt-1.5 font-display text-[1.2rem] font-medium leading-snug text-ink transition-colors group-hover:text-pink-deep">
+          <h3 className="mt-1.5 break-words font-display text-[1.1rem] font-medium leading-snug sm:text-[1.2rem] text-ink transition-colors group-hover:text-pink-deep">
             {product.name}
           </h3>
           <Price price={product.price} compareAt={product.compare_at_price} size="sm" className="mt-1.5" />

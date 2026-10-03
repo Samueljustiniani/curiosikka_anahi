@@ -24,7 +24,7 @@ export function FeaturedProducts({ products }: { products: Product[] }) {
       />
       <div className="mt-12">
         {products.length > 0 ? (
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 xl:grid-cols-4 xl:gap-x-6">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-10 min-[360px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-x-6">
             {products.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} />
             ))}
